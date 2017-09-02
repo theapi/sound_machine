@@ -26,10 +26,7 @@ bool blinkState = false;
 void setup() {
     Wire.begin();
 
-    // initialize serial communication
-    // (38400 chosen because it works as well at 8MHz as it does at 16MHz, but
-    // it's really up to you depending on your project)
-    Serial.begin(38400);
+    Serial.begin(57600);
 
     // initialize device
     Serial.println("Initializing I2C devices...");
@@ -59,5 +56,7 @@ void loop() {
     // blink LED to indicate activity
     blinkState = !blinkState;
     digitalWrite(LED_PIN, blinkState);
+
+    delay(100);
 }
 
