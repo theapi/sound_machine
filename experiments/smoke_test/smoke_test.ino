@@ -26,7 +26,7 @@ bool blinkState = false;
 void setup() {
     Wire.begin();
 
-    Serial.begin(57600);
+    Serial.begin(115200);
 
     // initialize device
     Serial.println("Initializing I2C devices...");
