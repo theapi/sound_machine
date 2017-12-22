@@ -1,4 +1,4 @@
-update=Fri 22 Dec 2017 21:36:10 GMT
+update=Fri 22 Dec 2017 22:30:34 GMT
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,4 +59,3 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=sound_machine
-LibName31=arduino_nano
