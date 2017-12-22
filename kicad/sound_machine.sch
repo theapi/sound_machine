@@ -29,7 +29,6 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:sound_machine
-LIBS:arduino_nano
 LIBS:sound_machine-cache
 EELAYER 25 0
 EELAYER END
@@ -51,7 +50,7 @@ U 1 1 59A0400A
 P 8625 4850
 F 0 "U2" H 8625 5350 60  0000 C CNN
 F 1 "DFPlayerMini" H 8625 4300 60  0000 C CNN
-F 2 "Socket_Strips:Socket_Strip_Straight_2x08_Pitch2.54mm" H 8675 4450 60  0001 C CNN
+F 2 "sound_machine:DFPlayerMini" H 8675 4450 60  0001 C CNN
 F 3 "" H 8675 4450 60  0001 C CNN
 	1    8625 4850
 	1    0    0    -1  
