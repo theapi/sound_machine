@@ -1,4 +1,0 @@
-(fp_lib_table
-  (lib (name sound_machine)(type KiCad)(uri "$(KIPRJMOD)/sound_machine.pretty")(options "")(descr ""))
-  (lib (name theapi)(type KiCad)(uri "$(KIPRJMOD)/theapi.pretty")(options "")(descr ""))
-)

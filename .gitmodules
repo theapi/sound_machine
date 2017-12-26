@@ -1,0 +1,3 @@
+[submodule "sound_machine_hardware"]
+	path = sound_machine_hardware
+	url = https://github.com/theapi/sound_machine_hardware.git
