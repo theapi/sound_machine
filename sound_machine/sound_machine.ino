@@ -9,6 +9,7 @@
 #include "DFRobotDFPlayerMini.h"
 
 #define LED_PIN 13
+#define BUTTON_PIN 4
 
 SoftwareSerial SoftSerial(10, 11); // RX, TX
 DFRobotDFPlayerMini DFPlayer;
@@ -18,9 +19,13 @@ MPU6050 accelgyro;
 int16_t ax, ay, az;
 int16_t gx, gy, gz;
 
+int button_state = 0;
+
 void setup() {
   // configure Arduino LED for
   pinMode(LED_PIN, OUTPUT);
+  // Button default to high.
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
     
   Wire.begin();
 
@@ -60,6 +65,16 @@ void setup() {
 }
 
 void loop() {
+  // By default the button is high.
+  if (!digitalRead(BUTTON_PIN)) {
+    if (button_state == 0) {
+      button_state = 1;
+      DFPlayer.next();
+    }
+  } else {
+    button_state = 0;
+  }
+
   // read raw accel/gyro measurements from device
   accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
 
