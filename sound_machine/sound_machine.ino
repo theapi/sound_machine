@@ -70,16 +70,32 @@ void loop() {
     if (button_state == 0) {
       button_state = 1;
       DFPlayer.next();
+      print_accel_start();
     }
   } else {
     button_state = 0;
+    DFPlayer.pause();
   }
 
+  if (button_state == 1) {
+    print_accel();
+  }
+
+}
+
+void print_accel_start() {
+  Serial.println();
+  Serial.println();
+  Serial.println();
+  Serial.println("---");
+  Serial.println("aX\taY\taZ\tgX\tgY\tgz");
+}
+
+void print_accel() {
   // read raw accel/gyro measurements from device
   accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
 
   // display tab-separated accel/gyro x/y/z values
-  Serial.print("a/g:\t");
   Serial.print(ax); Serial.print("\t");
   Serial.print(ay); Serial.print("\t");
   Serial.print(az); Serial.print("\t");
@@ -88,5 +104,5 @@ void loop() {
   Serial.println(gz);
 
   delay(100);
-
 }
+
